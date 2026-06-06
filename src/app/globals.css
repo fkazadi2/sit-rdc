@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Manrope:wght@400;500;600;700;800;900&display=swap');
+@import "tailwindcss";
+
+/* =============================================
+   SIT RDC — Premium Design System v2
+   Palette officielle:
+   #000d48 Navy Deep  | #00b1e0 Cyan
+   #ffdf00 Yellow     | #eda900 Gold
+   #7c4e24 Brown
+   ============================================= */
+
+:root {
+  /* Official Brand Colors */
+  --navy:   #000d48;
+  --cyan:   #00b1e0;
+  --yellow: #ffdf00;
+  --gold:   #eda900;
+  --brown:  #7c4e24;
+
+  /* Theme Variables - Light Mode */
+  --bg:           #ffffff;
+  --bg-secondary: #f0f4f8;
+  --surface:      #ffffff;
+  --surface-alt:  #eef4fb;
+  --text:         #000d48;
+  --text-muted:   #4a5568;
+  --border:       rgba(0, 13, 72, 0.08);
+
+  /* Hero always dark */
+  --hero-bg:  #000d48;
+  --hero-text: #ffffff;
+
+  --font-inter:   'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-manrope: 'Manrope', 'Trebuchet MS', 'Helvetica Neue', sans-serif;
+}
+
+/* Base Reset */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: var(--font-inter);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: background-color 300ms ease, color 300ms ease;
+}
+
+.font-heading {
+  font-family: var(--font-manrope);
+}
+
+/* ---- Utility Classes ---- */
+
+.btn-yellow {
+  background-color: var(--yellow);
+  color: var(--navy);
+  font-weight: 700;
+  border-radius: 9999px;
+  padding: 0.75rem 2rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 24px rgba(255, 223, 0, 0.3);
+}
+
+.btn-yellow:hover {
+  background-color: var(--gold);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 32px rgba(255, 223, 0, 0.4);
+}
+
+.btn-cyan {
+  background-color: transparent;
+  border: 2px solid var(--cyan);
+  color: var(--cyan);
+  font-weight: 700;
+  border-radius: 9999px;
+  padding: 0.75rem 2rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.btn-cyan:hover {
+  background-color: var(--cyan);
+  color: var(--navy);
+  transform: translateY(-2px);
+}
+
+.text-gold {
+  background: linear-gradient(135deg, var(--yellow), var(--gold));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-cyan {
+  color: var(--cyan);
+}
+
+.navy-glass {
+  background: rgba(0, 13, 72, 0.65);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid rgba(0, 177, 224, 0.15);
+}
+
+.surface-card {
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  transition: background-color 300ms ease, border-color 300ms ease;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--cyan); border-radius: 3px; }
+
+/* Selection */
+::selection {
+  background-color: var(--cyan);
+  color: #fff;
+}
